@@ -10,11 +10,11 @@ export default function App() {
           title="Add a bill" 
         />
       </View>
-      <View>
+      <View style={styles.reminderSetup}>
         <Text>How many days leading up to your bill's due date would you like to receive a reminder?</Text>
         <TextInput placeholder="Number of days/reminders"/>
       </View>
-      <View style={styles.reminderSetup}>
+      <View style={styles.listOfBills}>
         <Text>List Of Bills</Text>
       </View>
       <View style={styles.FlexboxPractice}>
@@ -43,6 +43,9 @@ const styles = StyleSheet.create({
   },
   reminderSetup: {
     paddingTop: 50
+  },
+  listOfBills: {
+    padding: 50
   },
   FlexboxPractice: {
     flexDirection: 'row',
