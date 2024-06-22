@@ -15,11 +15,14 @@ export default function App() {
 }
 
 const styles = StyleSheet.create({
+  container: {
+    backgroundColor: 'mediumspringgreen'
+  },
   dummyText: {
     margin: 16, 
     padding: 5,
     borderWidth: 2, 
-    borderColor: 'Green',
+    borderColor: 'black',
     fontSize: 32,
     textAlign: 'center'
   }
