@@ -3,7 +3,7 @@ import { StyleSheet, Text, View, Button } from 'react-native';
 export default function App() {
   return (
     <View style={styles.container}>
-      <Text style={{margin: 16, borderWidth: 2, borderColor: 'Green', padding: 5, fontSize: 48}}>Remember To Pay Your Bills</Text>
+      <Text style={styles.dummyText}>Remember To Pay Your Bills</Text>
       <Text>Want to get reminders to pay your bills? Tap the button below to start.</Text>
       <View>
         <Button 
@@ -21,4 +21,11 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'center',
   },
+  dummyText: {
+    margin: 16, 
+    padding: 5,
+    borderWidth: 2, 
+    borderColor: 'Green',
+    fontSize: 48
+  }
 });
