@@ -1,18 +1,34 @@
 import { StyleSheet, Text, View, Button, TextInput } from 'react-native';
+import {useState} from 'react';
 
 export default function App() {
+  const [enteredNumberOfReminders, setEnteredNumberOfReminders] = useState('');
+  
+  function numberOfReminders(enteredText) {
+    setEnteredNumberOfReminders(enteredText);
+  }
+
+  function addBills() {
+
+  }
+  
+  
   return (
     <View style={styles.container}>
       <Text style={styles.dummyText}>Friendly Reminders To Pay Your Bills</Text>
       <Text>Want to get reminders to pay your bills? Tap the button below to start.</Text>
       <View>
         <Button 
-          title="Add a bill" 
+          title="Add a bill"
+          onPress={addBills}
         />
       </View>
       <View style={styles.reminderSetup}>
         <Text>How many days leading up to your bill's due date would you like to receive a reminder?</Text>
-        <TextInput placeholder="Number of days/reminders"/>
+        <TextInput 
+          placeholder="Number of days/reminders" 
+          onChangeText={numberOfReminders}
+        />
       </View>
       <View style={styles.listOfBills}>
         <Text>List Of Bills</Text>
