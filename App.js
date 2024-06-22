@@ -44,6 +44,7 @@ const styles = StyleSheet.create({
     paddingTop: 50
   },
   FlexboxPractice: {
-    flexDirection: 'row'
+    flexDirection: 'row',
+    justifyContent: 'space-between'
   }
 });
