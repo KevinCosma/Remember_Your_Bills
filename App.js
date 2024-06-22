@@ -1,4 +1,4 @@
-import { StyleSheet, Text, View, Button } from 'react-native';
+import { StyleSheet, Text, View, Button, TextInput } from 'react-native';
 
 export default function App() {
   return (
@@ -10,13 +10,21 @@ export default function App() {
           title="Add a bill" 
         />
       </View>
+      <View>
+        <Text>How many days leading up to your bill's due date would you like to receive a reminder?</Text>
+        <TextInput placeholder="Number of days/reminders"/>
+      </View>
+      <View style={styles.reminderSetup}>
+        <Text>List Of Bills</Text>
+      </View>
     </View>
   );
 }
 
 const styles = StyleSheet.create({
   container: {
-    backgroundColor: 'mediumspringgreen'
+    backgroundColor: 'mediumspringgreen',
+    padding: 50
   },
   dummyText: {
     margin: 16, 
@@ -25,5 +33,8 @@ const styles = StyleSheet.create({
     borderColor: 'black',
     fontSize: 32,
     textAlign: 'center'
+  },
+  reminderSetup: {
+    paddingTop: 50
   }
 });
