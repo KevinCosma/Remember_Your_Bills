@@ -30,7 +30,8 @@ export default function App() {
 const styles = StyleSheet.create({
   container: {
     backgroundColor: 'mediumspringgreen',
-    padding: 50
+    padding: 50,
+    flex: 1
   },
   dummyText: {
     margin: 16, 
