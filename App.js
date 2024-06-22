@@ -17,6 +17,12 @@ export default function App() {
       <View style={styles.reminderSetup}>
         <Text>List Of Bills</Text>
       </View>
+      <View style={styles.FlexboxPractice}>
+        <Text>Flexbox Practice</Text>
+        <Button 
+          title= "Flexbox Practice"
+        />
+      </View>
     </View>
   );
 }
@@ -36,5 +42,8 @@ const styles = StyleSheet.create({
   },
   reminderSetup: {
     paddingTop: 50
+  },
+  FlexboxPractice: {
+    flexDirection: 'row'
   }
 });
