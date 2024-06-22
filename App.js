@@ -3,7 +3,7 @@ import { StyleSheet, Text, View, Button } from 'react-native';
 export default function App() {
   return (
     <View style={styles.container}>
-      <Text style={{margin: 16, borderWidth: 2, borderColor: 'Green'}}>Remember To Pay Your Bills</Text>
+      <Text style={{margin: 16, borderWidth: 2, borderColor: 'Green', padding: 5}}>Remember To Pay Your Bills</Text>
       <Text>Want to get reminders to pay your bills? Tap the button below to start.</Text>
       <View>
         <Button 
