@@ -10,7 +10,7 @@ export default function App() {
   }
 
   function setReminder() {
-    
+
   }
   
   
@@ -18,12 +18,7 @@ export default function App() {
     <View style={styles.container}>
       <Text style={styles.dummyText}>Friendly Reminders To Pay Your Bills</Text>
       <Text>Want to get reminders to pay your bills? Tap the button below to start.</Text>
-      <View>
-        <Button 
-          title="Add a bill"
-          onPress={addBills}
-        />
-      </View>
+      
       <View style={styles.reminderSetup}>
         <Text>How many days leading up to your bill's due date would you like to receive a reminder?</Text>
         <TextInput 
@@ -31,7 +26,7 @@ export default function App() {
           onChangeText={numberOfReminders}
         />
         <Button 
-
+          title='Add'
         />
       </View>
       <View style={styles.listOfBills}>
