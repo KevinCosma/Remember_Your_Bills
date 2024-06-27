@@ -17,8 +17,12 @@ export default function App() {
   
   function addNewBill() {}
 
+  function billAmountHandler(enteredText) {
+    setEnteredBillAmountText(enteredText);
+  }
+
   function addBillToList() {
-    setBillAmount(...billAmount,)
+    
   }
 
   function lookAtListOfBills() {}
@@ -42,6 +46,7 @@ export default function App() {
       <View style={styles.billInfo}>
         <TextInput 
           placeholder='Enter Bill Amount'
+          onChangeText={enteredBillAmountText}
         />
         <TextInput 
           placeholder='Enter Bill Due Date'
