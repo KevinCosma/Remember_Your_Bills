@@ -3,13 +3,14 @@ import {useState} from 'react';
 
 export default function App() {
   const [enteredNumberOfReminders, setEnteredNumberOfReminders] = useState('');
-  
+  const [reminders, setReminders] = useState([]);
+
   function numberOfReminders(enteredText) {
     setEnteredNumberOfReminders(enteredText);
   }
 
-  function addBills() {
-    console.log(enteredNumberOfReminders);
+  function setReminder() {
+    
   }
   
   
@@ -28,6 +29,9 @@ export default function App() {
         <TextInput 
           placeholder="Number of days/reminders" 
           onChangeText={numberOfReminders}
+        />
+        <Button 
+
         />
       </View>
       <View style={styles.listOfBills}>
