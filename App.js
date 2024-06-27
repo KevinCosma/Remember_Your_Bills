@@ -9,7 +9,7 @@ export default function App() {
   }
 
   function addBills() {
-
+    console.log(enteredNumberOfReminders);
   }
   
   
