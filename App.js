@@ -4,7 +4,9 @@ import {useState} from 'react';
 export default function App() {
   // const [enteredNumberOfReminders, setEnteredNumberOfReminders] = useState('');
   // const [reminders, setReminders] = useState([]);
-
+  
+  const [enteredBillAmountText, setEnteredBillAmountText] = useState('');
+  const [billAmount, setBillAmount] = useState([]);
   // function numberOfReminders(enteredText) {
   //   setEnteredNumberOfReminders(enteredText);
   // }
@@ -15,23 +17,16 @@ export default function App() {
   
   function addNewBill() {}
 
+  function addBillToList() {
+    setBillAmount(...billAmount,)
+  }
+
   function lookAtListOfBills() {}
-  
+
   return (
     <View style={styles.container}>
       <Text style={styles.dummyText}>Friendly Reminders To Pay Your Bills</Text>
       <Text>Want to get reminders to pay your bills? Tap the button below to start.</Text>
-      
-      {/* <View style={styles.reminderSetup}>
-        <Text>How many days leading up to your bill's due date would you like to receive a reminder?</Text>
-        <TextInput 
-          placeholder="Number of days/reminders" 
-          onChangeText={numberOfReminders}
-        />
-        <Button 
-          title='Add'
-        />
-      </View> */}
 
       <View>
         <Button 
@@ -44,24 +39,35 @@ export default function App() {
       />        
       </View>
 
-      {/* <View>
-      <TextInput 
+      <View style={styles.billInfo}>
+        <TextInput 
           placeholder='Enter Bill Amount'
         />
         <TextInput 
           placeholder='Enter Bill Due Date'
         />
-      </View> */}
+        <Button 
+          title='Add Your Bill'
+          onPress={addBillToList}
+        />
+      </View>
 
       <View style={styles.listOfBills}>
         <Text>List Of Bills</Text>
+
       </View>
-      <View style={styles.FlexboxPractice}>
-        <Text>Flexbox Practice</Text>
-        <Button 
-          title= "Flexbox Practice"
+
+        {/* <View style={styles.reminderSetup}>
+        <Text>How many days leading up to your bill's due date would you like to receive a reminder?</Text>
+        <TextInput 
+          placeholder="Number of days/reminders" 
+          onChangeText={numberOfReminders}
         />
-      </View>
+        <Button 
+          title='Add'
+        />
+      </View> */}
+
     </View>
   );
 }
@@ -86,8 +92,7 @@ const styles = StyleSheet.create({
   listOfBills: {
     padding: 50
   },
-  FlexboxPractice: {
-    flexDirection: 'row',
-    justifyContent: 'space-between'
+  billInfo: {
+    padding: 50
   }
 });
