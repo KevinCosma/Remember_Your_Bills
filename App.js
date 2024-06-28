@@ -2,30 +2,21 @@ import { StyleSheet, Text, View, Button, TextInput } from 'react-native';
 import {useState} from 'react';
 
 export default function App() {
-  // const [enteredNumberOfReminders, setEnteredNumberOfReminders] = useState('');
-  // const [reminders, setReminders] = useState([]);
+  const [enteredBillType, setEnteredBillType] = useState('');
+  const [billType, setBillType] = useState([]);
   
-  const [enteredBillAmountText, setEnteredBillAmountText] = useState('');
-  const [billAmount, setBillAmount] = useState([]);
-  // function numberOfReminders(enteredText) {
-  //   setEnteredNumberOfReminders(enteredText);
-  // }
 
   // function setReminder() {
 
   // }
   
-  function addNewBill() {}
+  //function addNewBill() {}
 
-  function billAmountHandler(enteredText) {
-    setEnteredBillAmountText(enteredText);
-  }
-
-  function addBillToList() {
+  // function addBillToList() {
     
-  }
+  // }
 
-  function lookAtListOfBills() {}
+  //function lookAtListOfBills() {}
 
   return (
     <View style={styles.container}>
@@ -45,12 +36,15 @@ export default function App() {
 
       <View style={styles.billInfo}>
         <TextInput 
+          placeholder='Enter Bill Type'
+        />
+        <Text>Rent, Phone, Credit Card, etc...</Text>
+        {/* <TextInput 
           placeholder='Enter Bill Amount'
-          onChangeText={enteredBillAmountText}
         />
         <TextInput 
           placeholder='Enter Bill Due Date'
-        />
+        /> */}
         <Button 
           title='Add Your Bill'
           onPress={addBillToList}
