@@ -5,6 +5,13 @@ export default function App() {
   const [enteredBillType, setEnteredBillType] = useState('');
   const [billType, setBillType] = useState([]);
   
+  function billTypeInputHandler() {
+
+  }
+
+  function addBillType() {
+
+  }
 
   // function setReminder() {
 
@@ -37,6 +44,7 @@ export default function App() {
       <View style={styles.billInfo}>
         <TextInput 
           placeholder='Enter Bill Type'
+          onChangeText={billTypeInputHandler}
         />
         <Text>Rent, Phone, Credit Card, etc...</Text>
         {/* <TextInput 
@@ -46,8 +54,8 @@ export default function App() {
           placeholder='Enter Bill Due Date'
         /> */}
         <Button 
-          title='Add Your Bill'
-          onPress={addBillToList}
+          title='Add Bill Type'
+          onPress={addBillType}
         />
       </View>
 
