@@ -1,5 +1,6 @@
-import { StyleSheet, Text, View, Button, TextInput, ScrollView, FlatList } from 'react-native';
+import { StyleSheet, Text, View, Button, TextInput, FlatList } from 'react-native';
 import {useState} from 'react';
+import BillInput from './components/BillInput';
 
 export default function App() {
   const [enteredBillType, setEnteredBillType] = useState('');
@@ -48,11 +49,7 @@ export default function App() {
         <FlatList 
           data={bills}
           renderItem={(itemData) =>{
-            return (
-              <View>
-                <Text>{itemData.item.text}</Text>
-              </View>
-            );
+            return <BillInput />;
           }}
         />
       </View>
