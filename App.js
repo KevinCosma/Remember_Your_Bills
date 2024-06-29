@@ -1,18 +1,23 @@
-import { StyleSheet, Text, View, Button, TextInput } from 'react-native';
+import { StyleSheet, Text, View, Button, TextInput, ScrollView } from 'react-native';
 import {useState} from 'react';
 
 export default function App() {
-  const [enteredBillInfo, setEnteredBillInfo] = useState('');
-  const [userBills, setUserBills] = useState([]);
+  const [enteredBillType, setEnteredBillType] = useState('');
+  const [bills, setBills] = useState([])
+  //const [enteredBillCost, setEnteredBillCost] = useState('');
+  //const [enteredBillDueDate, setEnteredBillDueDate] = useState('');
   
-  function billInputHandler(enteredText) {
-    setEnteredBillInfo(enteredText);
+  
+  
+  function handleOnChange(enteredText) {
+    setEnteredBillType(enteredText);
   }
 
+
   function addBillToList() {
-    setUserBills(currentBills => [
-      ...currentBills, 
-      enteredBillInfo,
+    setBills((currentBills) => [
+      ...currentBills,
+      enteredBillType,
     ]);
    }
 
@@ -24,27 +29,31 @@ export default function App() {
       <View style={styles.billInfo}>
         <TextInput 
           placeholder='Enter Bill Type'
-          onChangeText={billInputHandler}
+          onChangeText={text=> handleOnChange(text, 'billType')}
         />
         <Text>Rent, Phone, Credit Card, etc...</Text>
         <TextInput 
-          placeholder='Enter Bill Amount'
-          onChangeText={billInputHandler}
+          placeholder='Enter Bill Cost'
+          onChangeText={text=> handleOnChange(text, 'billCost')}
         />
         <TextInput 
           placeholder='Enter Bill Due Date'
-          onChangeText={billInputHandler}
+          onChangeText={text=> handleOnChange(text, 'billDueDate')}
         />
         <Button 
           title='Add Bill To List'
-          onPress={addBillToList}
+          onPress={() => addBillToList()}
         />
       </View>
 
       <View style={styles.listOfBills}>
         <ScrollView nestedScrollEnabled={true}>
-          <Text>List Of Bills</Text>
-          {userBills.map((bill) => <Text key={bill}>{bill}</Text>)}
+          {bills.map((bill) => (
+            <View key={bill}>
+              <Text>{bill}</Text>
+            </View>
+          ))}
+          
         </ScrollView>
       </View>
 
