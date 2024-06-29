@@ -2,79 +2,45 @@ import { StyleSheet, Text, View, Button, TextInput } from 'react-native';
 import {useState} from 'react';
 
 export default function App() {
-  const [enteredBillType, setEnteredBillType] = useState('');
-  const [billType, setBillType] = useState([]);
+  const [] = useState('');
+  const [] = useState([]);
   
-  function billTypeInputHandler() {
-
+  function billInputHandler(enteredText) {
+    console.log(enteredText)
   }
 
-  function addBillType() {
-
-  }
-
-  // function setReminder() {
-
-  // }
-  
-  //function addNewBill() {}
-
-  // function addBillToList() {
+  function addBillToList() {
     
-  // }
-
-  //function lookAtListOfBills() {}
+   }
 
   return (
     <View style={styles.container}>
       <Text style={styles.dummyText}>Friendly Reminders To Pay Your Bills</Text>
       <Text>Want to get reminders to pay your bills? Tap the button below to start.</Text>
 
-      <View>
-        <Button 
-          title='Add New Bill'
-          onPress={addNewBill}
-        />
-      <Button 
-        title='Look at your list of bills'
-        onPress={lookAtListOfBills}
-      />        
-      </View>
-
       <View style={styles.billInfo}>
         <TextInput 
           placeholder='Enter Bill Type'
-          onChangeText={billTypeInputHandler}
+          onChangeText={billInputHandler}
         />
         <Text>Rent, Phone, Credit Card, etc...</Text>
-        {/* <TextInput 
+        <TextInput 
           placeholder='Enter Bill Amount'
+          onChangeText={billInputHandler}
         />
         <TextInput 
           placeholder='Enter Bill Due Date'
-        /> */}
+          onChangeText={billInputHandler}
+        />
         <Button 
-          title='Add Bill Type'
-          onPress={addBillType}
+          title='Add Bill To List'
+          onPress={addBillToList}
         />
       </View>
 
       <View style={styles.listOfBills}>
         <Text>List Of Bills</Text>
-
       </View>
-
-        {/* <View style={styles.reminderSetup}>
-        <Text>How many days leading up to your bill's due date would you like to receive a reminder?</Text>
-        <TextInput 
-          placeholder="Number of days/reminders" 
-          onChangeText={numberOfReminders}
-        />
-        <Button 
-          title='Add'
-        />
-      </View> */}
-
     </View>
   );
 }
