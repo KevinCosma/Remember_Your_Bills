@@ -42,8 +42,10 @@ export default function App() {
       </View>
 
       <View style={styles.listOfBills}>
-        <Text>List Of Bills</Text>
-        {userBills.map((bill) => <Text key={bill}>{bill}</Text>)}
+        <ScrollView nestedScrollEnabled={true}>
+          <Text>List Of Bills</Text>
+          {userBills.map((bill) => <Text key={bill}>{bill}</Text>)}
+        </ScrollView>
       </View>
 
     </View>
@@ -67,10 +69,10 @@ const styles = StyleSheet.create({
   reminderSetup: {
     paddingTop: 50
   },
-  listOfBills: {
+  billInfo: {
     padding: 50
   },
-  billInfo: {
+  listOfBills: {
     padding: 50
   }
 });
