@@ -2,15 +2,18 @@ import { StyleSheet, Text, View, Button, TextInput } from 'react-native';
 import {useState} from 'react';
 
 export default function App() {
-  const [] = useState('');
-  const [] = useState([]);
+  const [enteredBillInfo, setEnteredBillInfo] = useState('');
+  const [userBills, setUserBills] = useState([]);
   
   function billInputHandler(enteredText) {
-    console.log(enteredText)
+    setEnteredBillInfo(enteredText);
   }
 
   function addBillToList() {
-    
+    setUserBills(currentBills => [
+      ...currentBills, 
+      enteredBillInfo,
+    ]);
    }
 
   return (
@@ -40,7 +43,9 @@ export default function App() {
 
       <View style={styles.listOfBills}>
         <Text>List Of Bills</Text>
+        {userBills.map((bill) => <Text key={bill}>{bill}</Text>)}
       </View>
+
     </View>
   );
 }
