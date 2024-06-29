@@ -1,4 +1,4 @@
-import { StyleSheet, Text, View, Button, TextInput, ScrollView } from 'react-native';
+import { StyleSheet, Text, View, Button, TextInput, ScrollView, FlatList } from 'react-native';
 import {useState} from 'react';
 
 export default function App() {
@@ -17,7 +17,7 @@ export default function App() {
   function addBillToList() {
     setBills((currentBills) => [
       ...currentBills,
-      enteredBillType,
+      {text: enteredBillType, key: Math.random().toString()},
     ]);
    }
 
@@ -29,16 +29,14 @@ export default function App() {
       <View style={styles.billInfo}>
         <TextInput 
           placeholder='Enter Bill Type'
-          onChangeText={text=> handleOnChange(text, 'billType')}
+          onChangeText={handleOnChange}
         />
         <Text>Rent, Phone, Credit Card, etc...</Text>
         <TextInput 
           placeholder='Enter Bill Cost'
-          onChangeText={text=> handleOnChange(text, 'billCost')}
         />
         <TextInput 
           placeholder='Enter Bill Due Date'
-          onChangeText={text=> handleOnChange(text, 'billDueDate')}
         />
         <Button 
           title='Add Bill To List'
@@ -47,16 +45,17 @@ export default function App() {
       </View>
 
       <View style={styles.listOfBills}>
-        <ScrollView nestedScrollEnabled={true}>
-          {bills.map((bill) => (
-            <View key={bill}>
-              <Text>{bill}</Text>
-            </View>
-          ))}
-          
-        </ScrollView>
+        <FlatList 
+          data={bills}
+          renderItem={(itemData) =>{
+            return (
+              <View>
+                <Text>{itemData.item.text}</Text>
+              </View>
+            );
+          }}
+        />
       </View>
-
     </View>
   );
 }
