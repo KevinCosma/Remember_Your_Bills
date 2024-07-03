@@ -1,6 +1,6 @@
 import { StyleSheet, View, Text } from "react-native";
 
-function BillInput(props) {
+function BillList(props) {
     return (
         <View>
             <Text>{props.text}</Text>
@@ -8,8 +8,10 @@ function BillInput(props) {
     );
 }
 
-export default BillInput;
+export default BillList;
 
 const styles = StyleSheet.create({
-
+    listOfBills: {
+        padding: 50
+      }
 });

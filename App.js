@@ -1,21 +1,17 @@
 import { StyleSheet, Text, View, Button, TextInput, FlatList } from 'react-native';
 import {useState} from 'react';
-import BillInput from './components/BillList';
+
+import BillList from './components/BillList';
+import BillInput from './components/BillInput';
 
 export default function App() {
-  const [enteredBillType, setEnteredBillType] = useState('');
   const [bills, setBills] = useState([])
+
   //const [enteredBillCost, setEnteredBillCost] = useState('');
   //const [enteredBillDueDate, setEnteredBillDueDate] = useState('');
-  
-  
-  
-  function handleOnChange(enteredText) {
-    setEnteredBillType(enteredText);
-  }
 
 
-  function addBillToList() {
+  function addBillToList(enteredBillType) {
     setBills((currentBills) => [
       ...currentBills,
       {text: enteredBillType, key: Math.random().toString()},
@@ -24,27 +20,7 @@ export default function App() {
 
   return (
     <View style={styles.container}>
-      <Text style={styles.dummyText}>Friendly Reminders To Pay Your Bills</Text>
-      <Text>Want to get reminders to pay your bills? Tap the button below to start.</Text>
-
-      <View style={styles.billInfo}>
-        <TextInput 
-          placeholder='Enter Bill Type'
-          onChangeText={handleOnChange}
-        />
-        <Text>Rent, Phone, Credit Card, etc...</Text>
-        <TextInput 
-          placeholder='Enter Bill Cost'
-        />
-        <TextInput 
-          placeholder='Enter Bill Due Date'
-        />
-        <Button 
-          title='Add Bill To List'
-          onPress={() => addBillToList()}
-        />
-      </View>
-
+      <BillInput onAddBill={addBillToList} />
       <View style={styles.listOfBills}>
         <FlatList 
           data={bills}
@@ -74,10 +50,4 @@ const styles = StyleSheet.create({
   reminderSetup: {
     paddingTop: 50
   },
-  billInfo: {
-    padding: 50
-  },
-  listOfBills: {
-    padding: 50
-  }
 });
