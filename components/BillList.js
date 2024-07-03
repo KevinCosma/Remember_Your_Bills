@@ -2,11 +2,16 @@ import { StyleSheet, View, Text, Pressable } from "react-native";
 
 function BillList(props) {
     return (
-        <Pressable onPress={props.onDeleteBill}>
-            <View style={styles.listOfBills} >
-                <Text>{props.text}</Text>
-            </View>
-        </Pressable>
+        <View style={styles.listOfBills} >
+            <Pressable 
+                android_ripple={{color: 'red'}}    
+                onPress={props.onDeleteBill.bind(this, props.id)}
+                style={(pressed) => pressed && styles.pressedItem}    
+            >
+            <Text>{props.text}</Text>        
+            </Pressable>
+        </View>
+        
     );
 }
 
@@ -15,5 +20,9 @@ export default BillList;
 const styles = StyleSheet.create({
     listOfBills: {
         padding: 50
-      }
+    },
+    
+    pressedItem: {
+        opacity: 0.5
+    }
 });

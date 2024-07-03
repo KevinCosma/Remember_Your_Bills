@@ -7,6 +7,7 @@ import BillInput from './components/BillInput';
 export default function App() {
   const [bills, setBills] = useState([])
 
+
   function addBillToList(enteredBillType) {
     setBills((currentBills) => [
       ...currentBills,
@@ -14,8 +15,10 @@ export default function App() {
     ]);
    }
 
-   function deleteBillHandler() {
-      console.log('Delete');
+   function deleteBillHandler(id) {
+      setBills(currentBills => {
+        return currentBills.filter((bill) => bill.id !== id);
+      });
    }
 
   return (
@@ -28,6 +31,7 @@ export default function App() {
             return (
               <BillList 
                 text={itemData.item.text}
+                id={itemData.item.id}
                 onDeleteBill={deleteBillHandler}
               />
             );
