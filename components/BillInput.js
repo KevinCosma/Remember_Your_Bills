@@ -2,6 +2,8 @@ import { StyleSheet, View, TextInput, Button } from "react-native";
 
 function BillInput (props) {
     const [enteredBillType, setEnteredBillType] = useState('');
+    //const [enteredBillCost, setEnteredBillCost] = useState('');
+    //const [enteredBillDueDate, setEnteredBillDueDate] = useState('');
 
     function billInputHandler(enteredText) {
         setEnteredBillType(enteredText);
