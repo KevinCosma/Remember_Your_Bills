@@ -7,15 +7,15 @@ import BillInput from './components/BillInput';
 export default function App() {
   const [bills, setBills] = useState([])
 
-  //const [enteredBillCost, setEnteredBillCost] = useState('');
-  //const [enteredBillDueDate, setEnteredBillDueDate] = useState('');
-
-
   function addBillToList(enteredBillType) {
     setBills((currentBills) => [
       ...currentBills,
       {text: enteredBillType, key: Math.random().toString()},
     ]);
+   }
+
+   function deleteBillHandler() {
+      console.log('Delete');
    }
 
   return (
@@ -25,7 +25,12 @@ export default function App() {
         <FlatList 
           data={bills}
           renderItem={(itemData) =>{
-            return <BillList text={itemData.item.text} />;
+            return (
+              <BillList 
+                text={itemData.item.text}
+                onDeleteBill={deleteBillHandler}
+              />
+            );
           }}
         />
       </View>

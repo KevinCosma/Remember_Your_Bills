@@ -1,10 +1,12 @@
-import { StyleSheet, View, Text } from "react-native";
+import { StyleSheet, View, Text, Pressable } from "react-native";
 
 function BillList(props) {
     return (
-        <View>
-            <Text>{props.text}</Text>
-        </View>
+        <Pressable onPress={props.onDeleteBill}>
+            <View style={styles.listOfBills} >
+                <Text>{props.text}</Text>
+            </View>
+        </Pressable>
     );
 }
 
